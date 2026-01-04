@@ -1,13 +1,16 @@
-# API `/api/edoatrqm/` 使用说明
+# API `/api/{任意}/` 使用说明
 
 ## 接口描述
 该接口用于接收用户请求，将 `token` 存入 Redis 并原封不动地转发请求到配置文件中指定的后端 URL。同时会校验 `token` 的使用时间，如果超出配置的 `InvalidTime` 将返回提示信息。
 
+这个API路径 {任意} 不校验。用户请求过来是什么就是什么直接转发给后端。例如用户请求了`/api/1234a/token=xxx`那么校验token并且转发到后端请求`{url}/api/1234a/token=xxx`
+
 ---
 
 ## 请求方式
+
 ```
-GET /api/edoatrqm/
+GET /api/{任意}/
 ```
 
 ### 请求参数
@@ -21,8 +24,8 @@ GET /api/edoatrqm/
 示例请求：
 
 ```
-/api/edoatrqm/token=6998377b2f727ff6bdb697cc29f80ab8&flag=clashmeta
-/api/edoatrqm/token=6998377b2f727ff6bdb697cc29f80ab8
+/api/{任意}/token=6998377b2f727ff6bdb697cc29f80ab8&flag=clashmeta
+/api/{任意}/token=6998377b2f727ff6bdb697cc29f80ab8
 ````
 
 ---

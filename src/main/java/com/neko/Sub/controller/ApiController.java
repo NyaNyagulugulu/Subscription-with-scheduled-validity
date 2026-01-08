@@ -61,7 +61,12 @@ public class ApiController {
         String[] parts = path.split("/");
         for (String part : parts) {
             if (part.startsWith("token=")) {
-                return part.substring("token=".length());
+                String token = part.substring("token=".length());
+                int ampersandIndex = token.indexOf('&');
+                if (ampersandIndex != -1) {
+                    return token.substring(0, ampersandIndex);
+                }
+                return token;
             }
         }
         return null;

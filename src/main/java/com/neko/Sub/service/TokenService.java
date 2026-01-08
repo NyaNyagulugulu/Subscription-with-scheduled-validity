@@ -26,7 +26,7 @@ public class TokenService {
         long currentTime = System.currentTimeMillis();
         long diffMinutes = (currentTime - lastUsed) / (60 * 1000);
 
-        return diffMinutes <= invalidTimeMinutes;
+        return diffMinutes < invalidTimeMinutes;
     }
 
     public void updateToken(String token) {

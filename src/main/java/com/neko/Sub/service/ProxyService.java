@@ -22,9 +22,9 @@ public class ProxyService {
                 return EntityUtils.toString(response.getEntity());
             }
         } catch (IOException e) {
-            throw new RuntimeException("Failed to forward request", e);
+            throw new RuntimeException("转发请求失败", e);
         } catch (Exception e) {
-            throw new RuntimeException("Failed to forward request", e);
+            throw new RuntimeException("转发请求失败", e);
         }
     }
 }

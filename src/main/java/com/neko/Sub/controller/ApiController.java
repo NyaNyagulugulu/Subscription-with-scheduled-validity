@@ -36,13 +36,13 @@ public class ApiController {
 
         if (token == null || token.isEmpty()) {
             Map<String, String> errorResponse = new HashMap<>();
-            errorResponse.put("message", "Token is required");
+            errorResponse.put("message", "缺少必填参数 token");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
 
         if (!tokenService.isTokenValid(token, appConfig.getInvalidTimeMinutes())) {
             Map<String, String> errorResponse = new HashMap<>();
-            errorResponse.put("message", "Token使用时间超时");
+            errorResponse.put("message", "token已过期");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
         }
 

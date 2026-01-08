@@ -12,7 +12,8 @@ spring:
 # 后端地址
 app:
   backend-url: http://127.0.0.1:8080/
-  invalid-time-minutes: 5
+  # token失效时间 单位分
+  invalid-time-minutes: 1
 
 # 中间件运行端口
 server:

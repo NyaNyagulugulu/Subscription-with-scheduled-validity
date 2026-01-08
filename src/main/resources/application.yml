@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: subscription-service
+
+  # redis连接
+  data:
+    redis:
+      host: 10.0.5.2
+      port: 6379
+      database: 0
+
+# 后端地址
+app:
+  backend-url: http://127.0.0.1:8080/
+  invalid-time-minutes: 5
+
+# 中间件运行端口
+server:
+  port: 8081
